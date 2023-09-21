@@ -10,9 +10,10 @@
 		if( $num_row > 0 ) {
 			header('location:dashboard.php');
 	$_SESSION['id']=$row['user_id'];
+	$_SESSION['username']=$username;
 		}
 		else{ ?>
-	<div class="alert alert-danger">Access Denied!!!</div>		
+	<div class="alert alert-danger">Access Denied</div>		
 	<?php
 	}}
 	?>
