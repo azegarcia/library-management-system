@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2022 at 04:12 PM
+-- Generation Time: Mar 23, 2022 at 10:27 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `book` (
   `book_id` int(11) NOT NULL,
-  `book_title` varchar(100) NOT NULL,
   `category_id` int(50) NOT NULL,
   `author` varchar(50) NOT NULL,
   `book_copies` int(11) NOT NULL,
@@ -39,23 +38,16 @@ CREATE TABLE `book` (
   `copyright_year` int(11) NOT NULL,
   `date_receive` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `date_added` datetime NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+  `book_title` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `book`
 --
 
-INSERT INTO `book` (`book_id`, `book_title`, `category_id`, `author`, `book_copies`, `book_pub`, `publisher_name`, `isbn`, `copyright_year`, `date_receive`, `date_added`, `status`) VALUES
-(69, '1', 0, 'Test', 0, '', '', '', 0, '2022-02-27 12:40:30', '2022-02-27 20:40:30', 'Administration'),
-(70, '2', 0, 'test 2', 0, '', '', '', 0, '2022-02-27 12:40:39', '2022-02-27 20:40:39', 'Administrative Staff'),
-(71, '3', 0, 'test 3', 0, '', '', '', 0, '2022-02-27 15:08:58', '2022-02-27 20:40:48', 'Archive'),
-(72, '4', 0, 'test 4', 0, '', '', '', 0, '2022-02-27 12:41:04', '2022-02-27 20:41:04', 'Services and Utilization'),
-(73, '5', 0, 'test 5', 0, '', '', '', 0, '2022-02-27 12:41:21', '2022-02-27 20:41:21', 'Physical Set-up and Facilities'),
-(74, '6', 0, 'test 6', 0, '', '', '', 0, '2022-02-27 12:41:30', '2022-02-27 20:41:30', 'Financial Support'),
-(75, '7 ', 0, 'test 7', 0, '', '', '', 0, '2022-02-27 12:41:41', '2022-02-27 20:41:41', 'Linkages'),
-(76, '8', 0, 'test 8', 0, '', '', '', 0, '2022-02-27 12:41:48', '2022-02-27 20:41:48', 'ISO Documents'),
-(77, '3', 0, 'test 3', 0, '', '1', '', 0, '2022-02-27 15:10:13', '2022-02-27 23:08:43', 'Collection Development, Organization and Preservation');
+INSERT INTO `book` (`book_id`, `category_id`, `author`, `book_copies`, `book_pub`, `publisher_name`, `isbn`, `copyright_year`, `date_receive`, `date_added`, `status`, `book_title`) VALUES
+(114, 0, 'test1', 0, '', 'admin', '', 0, '2022-03-23 08:47:05', '2022-03-23 16:47:05', 'Administrative Staff', '1905 January 2018 ENCS_corrected.pdf');
 
 -- --------------------------------------------------------
 
@@ -102,13 +94,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
